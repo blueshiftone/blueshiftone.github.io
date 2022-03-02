@@ -1,0 +1,13 @@
+<h1>Data Grid Demo</h1>
+<div class="toolbar">
+  <data-grid-toolbar [gridComponent]="grid" ></data-grid-toolbar>
+</div>
+<div class="grid-section">
+  <div class="grid">
+    <data-grid #grid [data]="dataSource"></data-grid>
+  </div>
+  <div class="events">
+    <h2>Events</h2>
+    <div *ngFor="let e of eventLog">{{ e }}</div>
+  </div>
+</div>

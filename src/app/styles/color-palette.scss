@@ -1,0 +1,63 @@
+// see http://mcg.mbitson.com
+
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+$primary-color: #10a1d6;
+
+$primary-color-palette: (
+  50: #eaeef3,
+  100: #cad6e0,
+  200: #a7bacc,
+  300: #849eb7,
+  400: #698aa7,
+  500: #0a78a0,
+  600: #08678a,
+  700: #0c536d,
+  800: #084055,
+  900: #033344,
+  A100: #aedcec,
+  A200: #73cbeb,
+  A400: #4dafd3,
+  A700: $primary-color,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$dark-mode-background-color-palette: (
+  50: hsl(219deg 7% 95%),
+  100: hsl(219deg 7% 90%),
+  200: hsl(219deg 7% 80%),
+  300: hsl(219deg 7% 70%),
+  400: hsl(219deg 7% 60%),
+  500: hsl(219deg 7% 50%),
+  600: hsl(219deg 7% 40%),
+  700: hsl(219deg 7% 25%),
+  800: hsl(219deg 7% 18%),
+  900: hsl(219deg 7% 10%),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+)
