@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
+import { DOCUMENT } from '@angular/common'
+import { Component, Inject, OnInit, ViewChild } from '@angular/core'
 import {
   DataGridComponent,
   GridCellCoordinates,
@@ -33,7 +34,9 @@ export class DatagGridDemoComponent implements OnInit {
 
   public eventLog: string[] = [];
 
-  constructor() { }
+  public themeMode = 'light'
+
+  constructor(@Inject(DOCUMENT) private readonly doc: Document,) { }
 
   ngOnInit(): void {
 
@@ -73,6 +76,13 @@ export class DatagGridDemoComponent implements OnInit {
 
     }
     
+  }
+
+  public ToggleThemeMode(): void {
+    this.doc.documentElement.classList.remove(`${this.themeMode}-theme`)
+    this.themeMode = this.themeMode === 'light' ? 'dark' : 'light'
+    this.doc.documentElement.classList.add(`${this.themeMode}-theme`)
+    this.doc.documentElement.style.setProperty('color-scheme', this.themeMode)
   }
 
   private _random(): string {
