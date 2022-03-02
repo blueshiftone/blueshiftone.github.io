@@ -8,7 +8,6 @@ import {
   IGridRow,
   TColumnKey,
 } from '@blueshiftone/ngx-grid-core'
-import { filter } from 'rxjs'
 
 import {
   categoryOptions,
@@ -38,9 +37,9 @@ export class DatagGridDemoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.gridComponent.events.eventStream.pipe(filter(e => !e.eventName.includes('MouseEntered'))).subscribe(e => {
-      this.eventLog.unshift(e.eventName)
-    })
+    // this.gridComponent.events.eventStream.subscribe(e => {
+    //   console.log(e.eventName)
+    // })
 
     const finalRows: IGridRow[] = []
 
@@ -54,16 +53,16 @@ export class DatagGridDemoComponent implements OnInit {
           [ 'RecordID', i+1 ],
           [ 'Code', randomLipsum(2).replace(/\s/g, '_').toUpperCase() ],
           [ 'Description', randomLipsum(4) ],
-          [ 'IsVisible', Math.random() > 0.5 ],
+          [ 'Colors', Math.random() < 0.50 ? this._distinctValues([ randomFromArray(colors), randomFromArray(colors) ]) : ( Math.random() < 0.25 ? this._distinctValues([ randomFromArray(colors), randomFromArray(colors), randomFromArray(colors) ]) : null) ],
           [ 'Amount', parseFloat(`${randomIntFromInterval(1, 9999)}.${randomIntFromInterval(1, 999)}`) ],
           [ 'Percent', Math.random().toPrecision(3) ],
+          [ 'IsVisible', Math.random() > 0.5 ],
           [ 'Volume', parseFloat(`${randomIntFromInterval(1, 99999)}.${randomIntFromInterval(1, 99999)}`) ],
-          [ 'Date', randomDate() ],
-          [ 'Notes', `<p>${randomLipsum(6)}</p>` ],
-          [ 'Category', Math.random() < 0.65 ? randomFromArray(categoryOptions).value : null ],
           [ 'Users', Math.random() < 0.65 ? randomFromArray(gridUserRows).rowKey : null ],
+          [ 'Date', randomDate() ],
+          [ 'Category', Math.random() < 0.65 ? randomFromArray(categoryOptions).value : null ],
           [ 'UsersMulti', Math.random() < 0.65 ? [ randomFromArray(gridUserRows).rowKey, randomFromArray(gridUserRows).rowKey ]: null ],
-          [ 'Colors', Math.random() < 0.50 ? this._distinctValues([ randomFromArray(colors), randomFromArray(colors) ]) : ( Math.random() < 0.25 ? this._distinctValues([ randomFromArray(colors), randomFromArray(colors), randomFromArray(colors) ]) : null) ],
+          [ 'Notes', `<p>${randomLipsum(6)}</p>` ],
         ] as const).map<[string, IGridCellValue]>(v => [v[0], new GridCellValue(new GridCellCoordinates(rowKey, v[0]), v[1])]))
       ))
 

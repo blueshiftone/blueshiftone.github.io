@@ -17,19 +17,32 @@
   grid-template-columns: 1fr 320px;
 }
 
-.events {
-  padding: 15px;
-  border-top: 1px solid var(--divider-color);
-  border-left: 1px solid var(--divider-color);
-  height: calc(100vh - 141px);
-  overflow: auto;
-  h2 {
-    position: sticky;
-  }
+h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
-h1 {
+header {
   padding: 12px;
   margin: 0;
   border-bottom: 1px solid var(--divider-color);
+  display: flex;
+  align-items: center;
+}
+
+.greedy {
+  flex-grow: 1;
+}
+
+img.npm {
+  width: 30px;
+  height: 30px;
+  padding-right: 2px;
+}
+
+img.github {
+  width: 20px;
+  height: 20px;
+  padding-right: 2px;
 }
