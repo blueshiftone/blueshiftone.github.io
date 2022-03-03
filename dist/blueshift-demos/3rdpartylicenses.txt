@@ -93,6 +93,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 @blueshiftone/ngx-grid-core
+MIT
 
 @blueshiftone/ngx-grid-toolbar
 

@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
-    "@blueshiftone/ngx-grid-core": "^0.0.11",
+    "@blueshiftone/ngx-grid-core": "^0.0.15",
     "@blueshiftone/ngx-grid-toolbar": "^0.0.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",

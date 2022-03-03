@@ -35,13 +35,17 @@ header {
   flex-grow: 1;
 }
 
-img.npm {
+svg {
+  fill: currentColor;
+}
+
+svg.npm {
   width: 30px;
   height: 30px;
   padding-right: 2px;
 }
 
-img.github {
+svg.github {
   width: 20px;
   height: 20px;
   padding-right: 2px;

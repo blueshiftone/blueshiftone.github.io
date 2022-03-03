@@ -31,7 +31,7 @@ export function randomFromArray<T>(ar: T[]) {
 
 export function randomDate() {
   const date = new Date(+(new Date()) - Math.floor(Math.random()*10000000000))
-  return `${date.getFullYear()}/${date.getMonth().toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}`
+  return `${date.getFullYear()}/${Math.max(date.getMonth(), 1).toString().padStart(2, '0')}/${Math.max(date.getDate(), 1).toString().padStart(2, '0')}`
 }
 
 
